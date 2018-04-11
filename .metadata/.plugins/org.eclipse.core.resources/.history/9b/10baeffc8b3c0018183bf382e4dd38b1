@@ -1,0 +1,16 @@
+package com.lhw.mb.main;
+
+import java.util.Scanner;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class InsertMain {
+	public static void main(String[] args) {
+		try {
+			SqlSession ss = DBManager.connect();
+			Scanner keyboard = new Scanner(System.in);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

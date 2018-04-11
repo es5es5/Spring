@@ -1,0 +1,9 @@
+package com.lhw.mb.main;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class DBManager {
+	public static SqlSession connect() {
+		
+	}
+}

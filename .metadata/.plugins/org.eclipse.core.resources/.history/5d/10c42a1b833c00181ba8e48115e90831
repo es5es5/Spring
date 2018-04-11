@@ -1,0 +1,11 @@
+package com.lhw.mb.main;
+
+public class InsertMain {
+	public static void main(String[] args) {
+		try {
+			s
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

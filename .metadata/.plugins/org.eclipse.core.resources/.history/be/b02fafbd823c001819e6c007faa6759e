@@ -1,0 +1,7 @@
+package com.lhw.mb.main;
+
+public class InsertMain {
+	public static void main(String[] args) {
+
+	}
+}

@@ -1,0 +1,23 @@
+package com.kwon.xc.main;
+
+import java.io.InputStream;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
+
+public class XCMain4 {
+
+	public static void main(String[] args) {
+		try {
+			URL u = new URL("http://localhost/Apr09_1_XMLServer/GetProductJSON");
+			HttpsURLConnection huc = (HttpsURLConnection) u.openConnection();
+			InputStream is = huc.getInputStream();
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

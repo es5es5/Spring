@@ -1,0 +1,12 @@
+package com.lhw.mb.main;
+
+import java.math.BigDecimal;
+
+// DB필드명 = 멤버변수명
+// (Oracle한정) = BigDecimal형으로
+
+
+public class Product {
+	private String p_name;
+	private BigDecimal p_price;
+}

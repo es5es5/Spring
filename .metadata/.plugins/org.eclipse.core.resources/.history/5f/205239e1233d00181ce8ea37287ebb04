@@ -1,0 +1,14 @@
+package com.lhw.mb.main;
+
+public class Snippet {
+	public static void main(String[] args) {
+		<!-- https://mvnrepository.com/artifact/com.servlets/cos -->
+		<dependency>
+		    <groupId>com.servlets</groupId>
+		    <artifactId>cos</artifactId>
+		    <version>09May2002</version>
+		</dependency>
+		
+	}
+}
+

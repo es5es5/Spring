@@ -1,0 +1,15 @@
+package com.lhw.mb.main;
+
+
+// MyBatis( ±¸) iBatis)
+// 		DB ORM Framework
+//		Object Relational Mapping
+
+
+
+public class ConnectMain {
+	public static void main(String[] args) {
+		
+	}
+
+}

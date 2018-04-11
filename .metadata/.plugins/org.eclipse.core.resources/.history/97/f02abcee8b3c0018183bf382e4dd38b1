@@ -1,0 +1,14 @@
+package com.lhw.mb.main;
+
+import org.apache.ibatis.session.SqlSession;
+
+public class InsertMain {
+	public static void main(String[] args) {
+		try {
+			SqlSession ss = DBManager.connect();
+			System.out.println("¼º°ø");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

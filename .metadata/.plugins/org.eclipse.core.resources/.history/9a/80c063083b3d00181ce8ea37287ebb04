@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lhw">
+<select id="searchProduct" parameterType="com.lhw.mb.main.Product">
+
+</select>
+	<select id="getAllProduct" resultType="com.lhw.mb.main.Product">
+		select * from
+		apr11_product order by p_name
+	</select>
+	<insert id="reg" parameterType="com.lhw.mb.main.Product">
+		insert into apr11_product values(
+		apr11_product_seq.nextval,
+		#{p_name},
+		#{p_img},
+		#{p_price},
+		#{p_exp}
+		)
+	</insert>
+</mapper>

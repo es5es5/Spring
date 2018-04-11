@@ -1,0 +1,15 @@
+package com.kwon.xc.main;
+
+import java.net.URL;
+
+public class XCMain4 {
+
+	public static void main(String[] args) {
+		try {
+			URL u = new URL(spec);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}

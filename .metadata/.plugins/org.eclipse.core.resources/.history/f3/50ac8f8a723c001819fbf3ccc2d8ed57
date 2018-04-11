@@ -1,0 +1,33 @@
+package com.lhw.mb.main;
+
+import java.io.InputStream;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+public class SelectMain {
+
+	public static void main(String[] args) {
+
+		try {
+			// DB서버정보가 있는 파일명
+			String cfgName = "config.xml";
+
+			// 거기 있는 데이터를 빼올 수 있게
+			InputStream is = Resources.getResourceAsStream(cfgName);
+
+			//
+			SqlSessionFactoryBuilder ssfb = new SqlSessionFactoryBuilder();
+
+			SqlSessionFactory ssf = ssfb.build(is);
+
+			SqlSession ss = ssf.openSession();
+
+			System.out.println("연결 성공");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

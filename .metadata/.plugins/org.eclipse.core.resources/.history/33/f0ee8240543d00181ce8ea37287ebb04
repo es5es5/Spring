@@ -1,0 +1,11 @@
+package com.lhw.mb.main;
+
+import java.math.BigDecimal;
+
+public class MinMax {
+	
+	private BigDecimal min;
+	private BigDecimal max;
+	
+
+}

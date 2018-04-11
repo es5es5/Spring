@@ -1,0 +1,9 @@
+package com.lhw.mb.main;
+
+import java.math.BigDecimal;
+
+public class ForUpdate {
+	private BigDecimal search;
+	private BigDecimal increase;
+	
+}
