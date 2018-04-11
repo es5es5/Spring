@@ -44,7 +44,7 @@
 		delete from apr11_product where
 		p_no = #{p_no}
 	</delete>
-	<update id="update" parameterType="com.lhw.mb.ForUpdate">
+	<update id="update" parameterType="com.lhw.mb.main.ForUpdate">
 		update apr11_product set p_price = p_price + #{increase} where p_price &lt;= #{search}
 	</update>
 </mapper>

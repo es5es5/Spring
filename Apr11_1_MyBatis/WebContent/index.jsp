@@ -82,6 +82,13 @@ img {
 		<form action="DeleteController">
 			품명 : <input name="p_no"> <input type="submit" value="지우기">
 		</form>
+		<hr>
+		<h2>가격 인상</h2>
+		<form action="UpdateController">
+			<input name="search">원 이하인 것<br>
+			<input name="increase">원 인상<br>
+			<input type="submit" value="인상">
+		</form>
 	</div>
 </body>
 </html>

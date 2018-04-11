@@ -1,7 +1,6 @@
 package com.lhw.mb.main;
 
 import java.io.File;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -59,6 +58,7 @@ public class DAO {
 			
 			if (ss.update("lhw.update", fu) >= 1) {
 				request.setAttribute("r", "인상 성공");
+				ss.commit();
 			} else {
 				request.setAttribute("r", "인상 실패");
 			}
@@ -111,14 +111,10 @@ public class DAO {
 	
 	public static void getAll(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			//SqlSession ss = DBManager.connect();
-			//List<Product> ppp = ss.selectList("kwon.getAllProduct");
-			//request.setAttribute("products", ppp);
-			
 			request.setAttribute("products", 
 				DBManager.connect().selectList("lhw.getAllProduct")
 			);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

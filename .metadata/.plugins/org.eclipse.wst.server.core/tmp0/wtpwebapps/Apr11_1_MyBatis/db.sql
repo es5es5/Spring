@@ -7,3 +7,7 @@ create table apr11_product(
 );
 
 create sequence apr11_product_seq;
+
+select * from apr11_product;
+
+update apr11_product set p_price = p_price + 500 where p_price <= 12000;
