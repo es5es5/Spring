@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="Apr09_Test"/>
+<aop-project name="Apr12_4_SpringMVC"/>
+<aop-project name="Apr12_3_SpringDI"/>
+<aop-project name="Ap12_2_SpringDI"/>
+<aop-project name="Aaaasdf"/>
+<aop-project name="SpringMVC"/>
+<aop-project name="Apr12_5_SpringMVC"/>
 </aop-reference-model>

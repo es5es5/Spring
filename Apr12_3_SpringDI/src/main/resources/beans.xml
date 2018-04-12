@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+	<bean id="d" class="com.lhw.sdi.main.Dog"></bean>
+	<bean id="d2" class="com.lhw.sdi.main.Dog">
+		<constructor-arg value="이웅"></constructor-arg>
+		<constructor-arg value="2"></constructor-arg>
+	</bean>
+	<bean id="d3" class="com.lhw.sdi.main.Dog">
+		<property name="name" value="개삼이"></property>
+		<property name="age" value="3"></property>
+	</bean>
+	<bean id="h3" class="com.lhw.sdi.main.Human">
+		<constructor-arg value="홍길동"></constructor-arg>
+		<constructor-arg value="33"></constructor-arg>
+		<constructor-arg value="170"></constructor-arg>
+		<constructor-arg value="1.5"></constructor-arg>
+	</bean>
+	<bean id="h4" class="com.lhw.sdi.main.Human">
+		<property name="age" value="22"></property>
+		<property name="eye" value="0.5"></property>
+		<property name="height" value="180"></property>
+		<property name="name" value="멍멍멍"></property>
+	</bean>
+	<bean id="cc" class="com.lhw.sdi.main.CanCoffee">
+		<constructor-arg>
+			<list value-type="java.lang.String">
+				<value>정제수</value>
+				<value>설탕</value>
+				<value>커피콩</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<map key-type="java.lang.String" value-type="java.lang.Double">
+				<entry key="탄수화물" value="7"></entry>
+				<entry key="단백질" value="4"></entry>
+				<entry key="지방" value="4"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean id="cc2" class="com.lhw.sdi.main.CanCoffee">
+		<property name="jaeryo">
+			<list value-type="java.lang.String">
+				<value>정제수</value>
+				<value>설탕</value>
+				<value>커피콩</value>
+			</list>
+		</property>
+		<property name="info">
+			<map key-type="java.lang.String" value-type="java.lang.Double">
+				<entry key="탄수화물" value="7"></entry>
+				<entry key="단백질" value="4"></entry>
+				<entry key="지방" value="4"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<context:annotation-config></context:annotation-config>
+	<bean id="hh2" class="com.lhw.sdi.main.Human2">
+		<property name="name" value="최길동"></property>
+	</bean>
+</beans>
