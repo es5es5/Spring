@@ -10,7 +10,7 @@
 	<table id="loginOKTbl">
 		<tr>
 			<td rowspan="2" id="loginOKImgTd" align="center"><img class="loginOKImg"
-				src="etc/${sessionScope.loginMember.im_img }"></td>
+				src="resources/etc/${sessionScope.loginMember.im_img }"></td>
 			<td id="loginOKID">${sessionScope.loginMember.im_id }</td>
 		</tr>
 		<tr>

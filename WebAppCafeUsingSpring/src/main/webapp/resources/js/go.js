@@ -1,32 +1,32 @@
 function bye() {
-	var pw = prompt("ï¿½ï¿½Ð¹ï¿½È£");
+	var pw = prompt("·Î±×¾Æ¿ôÇÒ°ÅÀÓ?");
 	if (pw != null && pw != "") {
 		location.href = "MemberByeController?im_pw=" + pw;
 	}
 }
 
 function deleteData(id_id, id_file) {
-	var ok = confirm("ï¿½ï¿½Â¥?");
+	var ok = confirm("ÁøÂ¥?");
 	if (ok) {
 		location.href = "DataRoomDeleteController?id_id=" + id_id + "&id_file=" + id_file;
 	}
 }
 function deleteMsg(im_no) {
-	var ok = confirm("ï¿½ï¿½Â¥?");
+	var ok = confirm("?");
 	if (ok) {
 		location.href = "MsgDeleteController?im_no=" + im_no;
 	}
 }
 
 function deleteRepl(isr_no) {
-	var ok = confirm("ï¿½ï¿½Â¥?");
+	var ok = confirm("");
 	if (ok) {
 		location.href = "SNSReplDeleteController?isr_no=" + isr_no;
 	}
 }
 
 function deleteSNS(is_no) {
-	var ok = confirm("ï¿½ï¿½Â¥?");
+	var ok = confirm("");
 	if (ok) {
 		location.href = "SNSDeleteController?is_no=" + is_no;
 	}
@@ -41,11 +41,12 @@ function goUpdateMember() {
 }
 
 function logout() {
-	var ok = confirm("ï¿½ï¿½Â¥?");
+	var ok = confirm("ÁøÂ¥?");
 	if (ok) {
-		location.href = "MemberLogoutController";
+		location.href = "logout.do";
 	}
 }
+
 
 function searchSNS(is_owner) {
 	location.href = "SNSSearchController?is_owner=" + is_owner;
@@ -61,10 +62,12 @@ function sendMsg(im_to) {
 }
 
 function updateSNS(is_no) {
-	var is_txt = prompt("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+	var is_txt = prompt("");
 
 	if (is_txt != null && is_txt != "" && is_txt.length <= 150) {
 		location.href = "SNSUpdateController?is_no=" + is_no + "&is_txt="
 				+ is_txt;
 	}
 }
+
+

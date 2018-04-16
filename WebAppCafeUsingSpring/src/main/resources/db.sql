@@ -7,3 +7,6 @@ create table cafe_member(
 	im_addr3 varchar2(100 char) not null,
 	im_img varchar2(200 char) not null
 );
+
+
+select * from cafe_member;

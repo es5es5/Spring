@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -35,7 +36,7 @@ public class MemberDAO {
 			m.setIm_addr2(mr.getParameter("im_addr2"));
 			m.setIm_addr3(mr.getParameter("im_addr3"));
 			m.setIm_img(im_img);
-
+			
 			if (ss.getMapper(MemberMapper.class).join(m) == 1) {
 				request.setAttribute("r", "가입 성공");
 			} else {
@@ -48,6 +49,18 @@ public class MemberDAO {
 		}
 
 	}
+	
+	public boolean loginCheck(HttpServletRequest request, HttpServletResponse response) {
+		Member m = (Member) request.getSession().getAttribute("loginMember");
+		
+		if(m!=null) {
+			request.setAttribute("loginPage", "member/loginOK.jsp");
+			return true;
+		} else {
+			request.setAttribute("loginPage", "member/login.jsp");
+			return false;
+		}
+	}
 
 	public void login(Member m, HttpServletRequest request, HttpServletResponse response) {
 		try {
@@ -56,6 +69,10 @@ public class MemberDAO {
 			if (dbM != null) {
 				if(m.getIm_pw().equals(dbM.getIm_pw())) {
 					request.setAttribute("r", "로그인 성공");
+
+					// 로그인 성공했다면, 그 아이디 정보를 세션에.
+					request.getSession().setAttribute("loginMember", dbM);
+					request.getSession().setMaxInactiveInterval(100);
 				} else {
 					request.setAttribute("r", "비번 틀림");
 				}
@@ -68,5 +85,9 @@ public class MemberDAO {
 			request.setAttribute("r", "DB서버문제");
 		}
 		
+	}
+
+	public void logout(HttpServletRequest request, HttpServletResponse response) {
+		request.getSession().setAttribute("loginMember", null);
 	}
 }

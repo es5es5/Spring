@@ -8,7 +8,7 @@
 </head>
 <body> 
 	<table id="loginTbl">
-		<form action="MemberLoginController" method="post" 
+		<form action="login.do" method="post" 
 		name="loginForm" onsubmit="return loginCheck();">
 		<tr><td style="height:10px;"></td></tr>
 		<tr>
