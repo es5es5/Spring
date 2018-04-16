@@ -13,6 +13,8 @@ public class MemberController {
 
 	@Autowired
 	private MemberDAO mDAO;
+	
+	
 
 	@RequestMapping(value = "/join.go", method = RequestMethod.GET)
 	public String joinGo(HttpServletRequest request, HttpServletResponse response) {

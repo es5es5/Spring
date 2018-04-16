@@ -47,7 +47,6 @@ function logout() {
 	}
 }
 
-
 function searchSNS(is_owner) {
 	location.href = "SNSSearchController?is_owner=" + is_owner;
 }
