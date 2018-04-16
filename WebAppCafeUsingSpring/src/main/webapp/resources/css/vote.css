@@ -1,0 +1,138 @@
+@charset "EUC-KR";
+
+#voteRegTbl {
+	position: fixed;
+	left: 50%;
+	width: 700px;
+	margin-left: -490px;
+	margin-top: -40px;
+	border-radius: 10px;
+	border: #4527A099 solid 3px;
+	background-color: #ffffffcc;
+}
+
+#voteRegInputTd {
+	height: 40px;
+}
+
+#voteRegInput {
+	border: #00000099 solid 2px;
+	border-radius: 10px;
+	padding-left: 10px;
+	height: 30px;
+	width: 653px;
+	font-size: 12pt;
+	margin-top: 10px;
+	margin-left: 14px;
+	font-weight: 800;
+}
+
+#voteRegTA {
+	border: #00000099 solid 2px;
+	background-color: transparent;
+	width: 530px;
+	font-weight: 800;
+	height: 93px;
+	font-size: 12pt;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px;
+}
+
+#voteRegBtn {
+	border: #4527A099 solid 2px;
+	background-color: transparent;
+	width: 90px;
+	color: #4527A099;
+	font-weight: 800;
+	height: 118px;
+	font-size: 13pt;
+	border-radius: 10px;
+	margin: 10px; margin-right : 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+#voteRegBtn:hover {
+	background-color: #4527A099;
+	color: white;
+}
+
+#voteArea {
+	margin-top: 180px;
+	width: 700px;
+	background-color: #4527A099;
+	color: white;
+	border-spacing: 2px;
+	border-radius:10px;
+	box-shadow: 5px 5px 5px black;
+}
+
+#voteTitle {
+	font-size: 15pt;
+	font-weight: 900;
+	height: 60px;
+}
+
+.voteTd1 {
+	width: 100px;
+	font-size: 13pt;
+	font-weight: 800;
+	padding-left: 15px;
+	height: 40px;
+}
+
+.voteTd2 {
+	padding-left: 10px;
+	background-color: white;
+	color: #4527A0;
+	font-weight: 800;
+	font-size: 13pt;
+	height: 30px;
+}
+
+.voteTd3 {
+	background-color: white;
+	color: black;
+}
+
+#voteArea2 {
+	width: 650px;
+	border: #4527A099 solid 3px;
+	margin: 25px;
+	font-size: 11pt;
+}
+.va1{
+	width:40px; 
+}
+.va3{
+	width: 50px;
+}
+.va4{
+	width:70px;
+}
+.va1, .va2, .va3, .va4{
+	background-color: #4527A099;
+	color:white;
+	font-weight: 800;
+}
+#voteArea2 tr td{
+	padding:5px;
+}
+
+#voteBtn {
+	background-color: transparent;
+	color: white;
+	border: none;
+	height: 35px;
+	font-weight: 800;
+	font-size: 13pt;
+	border-radius: 5px;
+	margin: 5px;
+	width: 95%;
+}
+
+#voteBtn:hover {
+	background-color: white;
+	color: #4527A0;
+}

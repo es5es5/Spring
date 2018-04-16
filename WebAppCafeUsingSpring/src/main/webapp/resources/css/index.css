@@ -1,0 +1,69 @@
+@charset "EUC-KR";
+a{
+	text-decoration: none;
+}
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color: #212121;
+}
+table{
+	border-spacing: 0px;
+}
+input, button, textarea, select{
+	outline: none;
+}
+textarea{
+	resize: none;
+}
+h2{
+	color:#CFD8DC;
+}
+#siteTitleArea{
+	width:100%;
+	position:fixed;
+	top:0px;
+}
+#siteMenuArea{
+	background-color:#CFD8DC99;
+	height: 40px;
+	width: 100%;
+}
+#siteMenuArea2{
+	width:1000px;
+}
+#siteTitleArea2 {
+	width: 1000px;
+}
+#siteTitleTd{
+	height:70px;
+	padding-left: 15px;
+}
+#siteTitle{
+	color:#CFD8DC;
+	font-size: 20pt;
+	font-weight: 900;	
+}
+.siteMenu{
+	color:white;
+	font-size: 13pt;
+	font-weight: 700;
+	margin-left: 20px; 
+	margin-right: 20px;
+}
+.siteMenu:hover{
+	color:red;
+}
+#siteLoginArea{
+	position: fixed;
+	top:55px;
+	right: 15px;
+}
+#siteContentArea{
+	width:100%;
+	margin-top:120px; 
+}
+
+#siteContentArea2{
+	width: 1000px;
+}

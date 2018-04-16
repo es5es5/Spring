@@ -60,7 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 80
     -->
-    <Connector connectionTimeout="20000" port="80" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector URIEnconding="euc-kr" connectionTimeout="20000" port="80" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\soldesk\Desktop\lhw\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\soldesk\Desktop\lhw\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Apr12_4_SpringMVC" path="/mvc" reloadable="true" source="org.eclipse.jst.jee.server:Apr12_4_SpringMVC"/><Context docBase="C:\Users\soldesk\Desktop\lhw\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Apr12_5_SpringMVC" path="/mvc2" reloadable="true" source="org.eclipse.jst.jee.server:Apr12_5_SpringMVC"/><Context docBase="C:\Users\soldesk\Desktop\lhw\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\SpringMVC" path="/mvc3" reloadable="true" source="org.eclipse.jst.jee.server:SpringMVC"/></Host>
+      <Context docBase="C:\Users\soldesk\Desktop\lhw\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\soldesk\Desktop\lhw\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\JinsLover" path="/jinslover" reloadable="true" source="org.eclipse.jst.jee.server:JinsLover"/><Context docBase="C:\Users\soldesk\Desktop\lhw\Spring\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\WebAppCafeUsingSpring" path="/cafe" reloadable="true" source="org.eclipse.jst.jee.server:WebAppCafeUsingSpring"/></Host>
     </Engine>
   </Service>
 </Server>

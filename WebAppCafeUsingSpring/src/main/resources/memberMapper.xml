@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhw.cafe.member.MemberMapper">
+	<insert id="join" 
+		parameterType="com.lhw.cafe.member.Member">
+		insert into cafe_member 
+		values(#{im_id}, #{im_pw}, #{im_name},
+		#{im_addr1}, #{im_addr2}, #{im_addr3}, #{im_img})
+	</insert>
+	<select id="getMemberById"
+		parameterType="com.lhw.cafe.member.Member"
+		resultType="com.lhw.cafe.member.Member">
+		select * from cafe_member
+		where im_id=#{im_id}
+	</select>
+</mapper>
