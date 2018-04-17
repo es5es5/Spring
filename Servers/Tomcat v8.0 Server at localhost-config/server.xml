@@ -60,7 +60,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 80
     -->
-    <Connector URIEnconding="euc-kr" connectionTimeout="20000" port="80" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector URIEncoding="euc-kr" connectionTimeout="20000" port="80" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="JinsLover" path="/jinslover" reloadable="true" source="org.eclipse.jst.jee.server:JinsLover"/><Context docBase="WebAppCafeUsingSpring" path="/cafe" reloadable="true" source="org.eclipse.jst.jee.server:WebAppCafeUsingSpring"/></Host>
+      <Context docBase="JinsLover" path="/jinslover" reloadable="true" source="org.eclipse.jst.jee.server:JinsLover"/><Context docBase="WebAppCafeUsingSpring" path="/cafe" reloadable="true" source="org.eclipse.jst.jee.server:WebAppCafeUsingSpring"/><Context docBase="Apr17_1_jQuery" path="/Apr17_1_jQuery" reloadable="true" source="org.eclipse.jst.jee.server:Apr17_1_jQuery"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -3,8 +3,41 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	// js : 이벤트 처리용 언어
+	// callback 함수: 어떤 이벤트에 연결시켜놓는 함수
+	//				  그 이벤트가 발생했을때 자동으로 호출됨
+	// $(선택자).이벤트(콜백함수);
+	//		선택자
+	//			js내장객체
+	//			"css선택자"
+	
+	// $(document) // 이 html문서
+	// jQuery의 main
+	
+	$(function(){
+		alert("jQuery의 main");
+		$("aa")
+	});
+
+	/* $(document).ready(function(){
+		alert("ㅋㅋㅋ");
+		
+	}); //body의 onload */
+	
+</script>
 </head>
 <body>
-	<h1>ㅋㅋㅋ</h1>
+	<h1 id="aa">ㅋㅋㅋ</h1>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+h1 {
+	color: red;
+}
+
+h2 {
+	display: none; /* 안보이고, 자리도 안 차지함 */
+}
+
+#menu {
+	border: black solid 2px;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: -110px;
+	left: -110px;
+	-webkit-transition: top 0.5s ease-in;
+}
+#menu2 {
+	background-color : lime;
+	width: 100px;
+	height: 100px;
+	
+	position :absolute;
+	top :0px;
+	right :0px;
+	
+	opacity:0;
+}
+
+img {
+	width : 150px;
+	height : auto-height;
+	position:absolute;
+	-webkit-transition : all 0.3s ease-out;
+}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	// $(선택자).이벤트(콜백함수);
+	$(function() {
+
+		$("#b1").click(function() {
+			// css 조절
+			// $(선택자).css("속성명", "값")
+			$("h1").css("color", "green");
+		});
+
+		$("#b2").dblclick(function() {
+			$("h1").css("background-color", "orange");
+		});
+
+		$("#b3").click(function() {
+			var c = $("h1").css("color");
+			alert(c);
+		});
+		$("#b4").click(function() {
+			var h2Css = $("h2").css("display");
+			if (h2Css == "none") {
+				$("h2").css("display", "block");
+			} else {
+				$("h2").css("display", "none");
+			}
+		});
+		$("#b5").click(function() {
+			$("#menu").css("top", "0px").css("left", "0px");
+		});
+		$("#b6").click(function() {
+			$("#menu2").css("opacity","1");
+		});
+		
+		// 타이머(주기적으로 어떤 작업)
+		var timer = setInterval(function(){
+			
+			// 랜덤
+			// Math.random() // 0.0 ~ 0.999999
+			var t = Math.random() * 300;
+			var l = Math.random() * 1500;
+			
+			$("img").css("top", t+"px").css("left", l+"px");
+		},500);
+		
+		$(document).click(function(){
+			clearInterval(timer);
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<img src="um.jpg">
+	<div id="menu">메뉴1</div>
+	<button id="b5">b5</button>
+
+	<div id="menu2">메뉴2</div>
+	<button id="b6">b6</button>
+
+	<h1>ㅋㅋㅋ</h1>
+	<button id="b1">b1</button>
+	<button id="b2">b2</button>
+	<button id="b3">b3</button>
+	<hr>
+
+	<h2>ㅎㅎㅎㅎ</h2>
+	<button id="b4">버튼4</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

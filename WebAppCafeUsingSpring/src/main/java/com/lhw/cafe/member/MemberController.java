@@ -16,7 +16,7 @@ public class MemberController {
 
 	@RequestMapping(value = "/join.go", method = RequestMethod.GET)
 	public String joinGo(HttpServletRequest request, HttpServletResponse response) {
-		request.setAttribute("loginPage", "member/login.jsp");
+		mDAO.loginCheck(request, response);
 		request.setAttribute("contentPage", "member/join.jsp");
 		return "index";
 	}
@@ -24,8 +24,7 @@ public class MemberController {
 	@RequestMapping(value = "/join.do", method = RequestMethod.POST)
 	public String joinDo(Member m, HttpServletRequest request, HttpServletResponse response) {
 		mDAO.join(m, request, response);
-
-		request.setAttribute("loginPage", "member/login.jsp");
+		mDAO.loginCheck(request, response);
 		request.setAttribute("contentPage", "home.jsp");
 		return "index";
 	}

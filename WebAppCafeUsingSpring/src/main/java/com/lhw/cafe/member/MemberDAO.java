@@ -51,6 +51,7 @@ public class MemberDAO {
 	public void join(Member m, HttpServletRequest request, HttpServletResponse response) {
 		try {
 			String path = request.getSession().getServletContext().getRealPath("resources/etc");
+			System.out.println(path);
 
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "euc-kr",
 					new DefaultFileRenamePolicy());
@@ -85,6 +86,7 @@ public class MemberDAO {
 
 		if (m != null) {
 			request.setAttribute("loginPage", "member/loginOK.jsp");
+			System.out.println(m.getIm_img() + "111");
 			return true;
 		} else {
 			request.setAttribute("loginPage", "member/login.jsp");

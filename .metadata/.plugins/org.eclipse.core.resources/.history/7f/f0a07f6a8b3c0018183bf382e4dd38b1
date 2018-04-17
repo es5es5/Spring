@@ -1,7 +1,0 @@
-package com.lhw.mb.main;
-
-// DB필드명 = 멤버변수명
-// 숫자 = BigDecimal형으로
-public class Member {
-	
-}

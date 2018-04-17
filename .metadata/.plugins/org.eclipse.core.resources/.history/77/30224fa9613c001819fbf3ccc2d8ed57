@@ -1,9 +1,0 @@
-package com.lhw.em.main;
-
-public class EMMain {
-
-	public static void main(String[] args) {
-		// 외부 파일에서 불러오기
-	}
-
-}
