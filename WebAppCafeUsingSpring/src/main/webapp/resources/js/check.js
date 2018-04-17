@@ -65,11 +65,11 @@ function updateCheck() {
 	var pwField = document.updateForm.im_pw;
 	var pwChkField = document.updateForm.im_pwChk;
 	var nameField = document.updateForm.im_name;
-	var addrField = document.updateForm.im_addr;
+	var addr3Field = document.updateForm.im_addr3;
 	var imgField = document.updateForm.im_img;
 
 	if (isEmpty(idField) || containsHangul(idField)) {
-		alert("id È®ï¿½ï¿½");
+		alert("id È®ÀÎ");
 		idField.value = "";
 		idField.focus();
 		return false;
@@ -77,26 +77,26 @@ function updateCheck() {
 			|| lessThan(pwField, 4) || notContains(pwField, "1234567890")
 			|| notContains(pwField, "qwertyuiopasdfghjklzxcvbnm")
 			|| notContains(pwField, "QWERTYUIOPASDFGHJKLZXCVBNM")) {
-		alert("pw È®ï¿½ï¿½");
+		alert("pw È®ÀÎ");
 		pwField.value = "";
 		pwChkField.value = "";
 		pwField.focus();
 		return false;
 	} else if (isEmpty(nameField)) {
-		alert("ï¿½Ì¸ï¿½ È®ï¿½ï¿½");
+		alert("ÀÌ¸§ È®ÀÎ");
 		nameField.value = "";
 		nameField.focus();
 		return false;
-	} else if (isEmpty(addrField)) {
-		alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½");
-		addrField.value = "";
-		addrField.focus();
+	} else if (isEmpty(addr3Field)) {
+		alert("ÁÖ¼Ò È®ÀÎ");
+		addrField3.value = "";
+		addrField3.focus();
 		return false;
 	} else if (isEmpty(imgField)) {
 		return true;
 	} else if (isNotType(imgField, ".png") && isNotType(imgField, ".gif")
 			&& isNotType(imgField, ".jpg") && isNotType(imgField, ".bmp")) {
-		alert("ï¿½ï¿½ï¿½ï¿½ ï¿½È¹Ù·ï¿½");
+		alert("»çÁø È®ÀåÀÚ È®ÀÎ");
 		imgField.value = "";
 		imgField.focus();
 		return false;

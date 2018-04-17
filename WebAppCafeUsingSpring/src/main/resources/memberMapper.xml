@@ -3,11 +3,21 @@
 <mapper namespace="com.lhw.cafe.member.MemberMapper">
 	<insert id="join" parameterType="com.lhw.cafe.member.Member">
 		insert into cafe_member
-		values(#{im_id}, #{im_pw}, #{im_name}, #{im_addr1}, #{im_addr2}, #{im_addr3}, #{im_img})
+		values(#{im_id}, #{im_pw}, #{im_name}, #{im_addr1}, #{im_addr2},
+		#{im_addr3}, #{im_img})
 	</insert>
 	<select id="getMemberById"
 		parameterType="com.lhw.cafe.member.Member"
 		resultType="com.lhw.cafe.member.Member">
 		select * from cafe_member where im_id=#{im_id}
 	</select>
+	<update id="update" parameterType="com.lhw.cafe.member.Member">
+		update cafe_member set
+		im_pw=#{im_pw}, im_name=#{im_name}, im_addr3=#{im_addr3},
+		im_img=#{im_img} where im_id=#{im_id}
+	</update>
+	<delete id="bye" parameterType="com.lhw.cafe.member.Member">
+		delete from cafe_member where
+		im_id=#{im_id}
+	</delete>
 </mapper>

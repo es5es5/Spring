@@ -13,8 +13,6 @@ public class MemberController {
 
 	@Autowired
 	private MemberDAO mDAO;
-	
-	
 
 	@RequestMapping(value = "/join.go", method = RequestMethod.GET)
 	public String joinGo(HttpServletRequest request, HttpServletResponse response) {
@@ -44,6 +42,36 @@ public class MemberController {
 	public String logoutDo(HttpServletRequest request, HttpServletResponse response) {
 		mDAO.logout(request, response);
 		mDAO.loginCheck(request, response);
+		request.setAttribute("contentPage", "home.jsp");
+		return "index";
+	}
+
+	@RequestMapping(value = "/member.update.go", method = RequestMethod.GET)
+	public String updateGo(HttpServletRequest request, HttpServletResponse response) {
+		if (mDAO.loginCheck(request, response)) {
+			request.setAttribute("contentPage", "member/update.jsp");
+		} else {
+			request.setAttribute("contentPage", "home.jsp");
+		}
+		return "index";
+	}
+
+	@RequestMapping(value = "/member.update.do", method = RequestMethod.POST)
+	public String updateDo(Member m, HttpServletRequest request, HttpServletResponse response) {
+		if (mDAO.loginCheck(request, response)) {
+			mDAO.update(m, request, response);
+		}
+		request.setAttribute("contentPage", "home.jsp");
+		return "index";
+	}
+
+	@RequestMapping(value = "/bye.do", method = RequestMethod.GET)
+	public String byeDo(Member m, HttpServletRequest request, HttpServletResponse response) {
+		if (mDAO.loginCheck(request, response)) {
+			mDAO.bye(m, request, response);
+			mDAO.logout(request, response);
+			mDAO.loginCheck(request, response);
+		}
 		request.setAttribute("contentPage", "home.jsp");
 		return "index";
 	}

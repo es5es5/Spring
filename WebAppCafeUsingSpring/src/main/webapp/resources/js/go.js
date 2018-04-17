@@ -1,7 +1,7 @@
-function bye() {
-	var pw = prompt("∑Œ±◊æ∆øÙ«“∞≈¿”?");
-	if (pw != null && pw != "") {
-		location.href = "MemberByeController?im_pw=" + pw;
+function bye(im_id) {
+	var ok = confirm("≈ª≈«“∞≈¿”?");
+	if (ok) {
+		location.href = "bye.do?im_id="+im_id;
 	}
 }
 
@@ -69,4 +69,7 @@ function updateSNS(is_no) {
 	}
 }
 
+function goUpdateMember(){
+	location.href = "member.update.go";
+}
 

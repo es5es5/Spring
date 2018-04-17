@@ -22,7 +22,7 @@
 			<td colspan="2" align="center"> 
 				<button onclick="logout();" class="loginOKBtn">·Î±×¾Æ¿ô</button>&nbsp;
 				<button onclick="goUpdateMember();" class="loginOKBtn">Á¤º¸¼öÁ¤</button>&nbsp;
-				<button onclick="bye();" class="loginOKBtn">Å»Åð</button>
+				<button onclick="bye('${sessionScope.loginMember.im_id}');" class="loginOKBtn">Å»Åð</button>
 			</td>
 		</tr>
 		<tr>

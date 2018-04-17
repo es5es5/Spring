@@ -1,5 +1,7 @@
 package com.lhw.cafe.member;
 
+import java.io.File;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 
 import javax.servlet.http.Cookie;
@@ -135,6 +137,74 @@ public class MemberDAO {
 					response.addCookie(c);
 				}
 			}
+		}
+	}
+	
+	public void update(Member m, HttpServletRequest request, HttpServletResponse response) {
+		try {
+			String path = request.getSession().getServletContext().getRealPath("resources/etc");
+
+			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "euc-kr", new DefaultFileRenamePolicy());
+			
+			// 현재 로그인된 사람 정보
+			Member lm = (Member) request.getSession().getAttribute("loginMember");
+			
+			// 원래 사진
+			String imgFile = lm.getIm_img();
+			
+			String im_img = mr.getFilesystemName("im_img");
+			
+			if(im_img != null) { // 사진을 바꾼다면
+				im_img = URLEncoder.encode(im_img, "euc-kr");
+				im_img = im_img.replace("+", " ");
+				
+				imgFile = URLDecoder.decode(imgFile, "euc-kr");
+				// 원래 사진 지우기
+				File f = new File(path + "/" + imgFile);
+				f.delete();
+			} else { // 안 바꾸면
+				im_img = imgFile;
+			}
+			
+			m.setIm_img(im_img);
+			m.setIm_id(mr.getParameter("im_id"));
+			m.setIm_name(mr.getParameter("im_name"));
+			m.setIm_pw(mr.getParameter("im_pw"));
+			m.setIm_addr3(mr.getParameter("im_addr3"));
+			
+			if(ss.getMapper(MemberMapper.class).update(m)== 1) {
+				request.setAttribute("r", "정보 수정 성공");
+				
+				// 세션에 있는 정보 바꾸기
+				request.getSession().setAttribute("loginMember", ss.getMapper(MemberMapper.class).getMemberById(m));
+			} else {
+				request.setAttribute("r", "정보 수정 실패");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("r", "정보 수정 실패");
+		}
+	}
+	
+	public void bye(Member m, HttpServletRequest request, HttpServletResponse response) {
+		try {
+			if (ss.getMapper(MemberMapper.class).bye(m)==1) {
+				request.setAttribute("r", "탈퇴 성공");
+				
+				Member lm = (Member) request.getSession().getAttribute("loginMember");
+				String imgFile = lm.getIm_img();
+				imgFile = URLEncoder.encode(imgFile, "euc-kr");
+				String path = request.getSession().getServletContext().getRealPath("resources/etc");
+				File f = new File(path + "/" + imgFile);
+				f.delete();
+				
+			} else {
+				request.setAttribute("r", "탈퇴 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("r", "탈퇴 실패");
 		}
 	}
 }
