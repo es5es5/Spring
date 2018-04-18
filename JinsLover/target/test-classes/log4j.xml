@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.lhw.jinslover">
+	<logger name="com.lhw.jins">
 		<level value="info" />
 	</logger>
 	
