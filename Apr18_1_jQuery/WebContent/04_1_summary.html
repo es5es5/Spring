@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	.dataTr:hover{
+		background-color: black;
+		color:white;
+	}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var ar2 = [{name:"홍길동", age:10},{name:"김길동", age:20},{name:"최길동", age:30}];		
+		
+		$.each(ar2, function(i, h){
+			var nameTd = $("<td></td>").text(h.name);
+			var ageTd = $("<td></td>").text(h.age);
+			
+			var tr = $("<tr></tr>").attr("class", "dataTr")
+				.append(nameTd, ageTd);
+			
+			$("#t1").prepend(tr);
+		});
+		
+		
+		// 버튼 눌렀을때
+		$("button").click(function(){
+			
+			// input내용 받아다가
+			var i1Txt = $("#i1").val();
+			var i2Txt = $("#i2").val();
+			var i3Txt = $("#i3").val();
+			
+			// td,tr만들어서 #t2에
+			var td1 = $("<td></td>").text(i1Txt);
+			var td2 = $("<td></td>").text(i2Txt);
+			var td3 = $("<td></td>").text(i3Txt);
+			
+			var tr = $("<tr></tr>").append(td1, td2, td3);
+			$("#t2").prepend(tr);
+			
+			$("input").each(function(i, ii){
+				$(ii).val("");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<table id="t1"></table>
+	<hr>
+	품명 : <input id="i1"><br>
+	가격 : <input id="i2"><br>
+	수량 : <input id="i3"><br>
+	<button>등록</button>
+	<table id="t2">
+		<tr>
+			<td>asd</td>
+			<td>123</td>
+			<td>1</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

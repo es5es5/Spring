@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var ar = ["ㄱ", "ㄴ", "ㄷ"]; // 배열
+		$("#b1").click(function(){
+			//$.each(배열, 데이터하나만날때마다 호출되는 콜백함수);
+			$.each(ar, function(i, s){
+				// ar[i] = s
+				alert(s);
+			});
+		});
+		///////////////////////////////////////
+		var h = {name:"홍길동", age:10}; // 객체	
+		$("#b2").click(function(){
+			// 객체명.속성명
+			alert(h.name);
+			alert(h.age);
+		});
+		///////////////////////////////////////
+		var ar2 = [
+					{name:"홍길동", age:10}, 
+					{name:"김길동", age:20},
+					{name:"최길동", age:30}
+				  ];
+		
+		$("#b3").click(function(){
+			$.each(ar2, function(i, h2){
+				// ar2[i] = h2
+				alert(h2.name + ":" + h2.age);
+			});
+		});
+		///////////////////////////////////////
+		$("#b4").click(function(){
+			// $(선택자).each(DOM객체하나만날때마다 호출되는 콜백함수)
+			$("button").each(function(i, b){
+				$(b).css("font-size", ((i + 1) * 10) + "pt");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="b1">배열 출력</button>
+	<button id="b2">객체 출력</button>
+	<button id="b3">객체 배열 출력</button>
+	<button id="b4">DOM객체 관리</button>
+</body>
+</html>
+
+
+
+
+
+
+
+

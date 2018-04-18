@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.a {
+	border: red solid 2px;
+	width: 100px;
+	height: 100px;
+}
+
+.b {
+	border: blue solid 2px;
+	width: 200px;
+	height: 300px;
+}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("table").click(function() {
+			alert($("td").text());
+		});
+
+		$("#b1").click(function() {
+			// DOM객체
+			// <태그명 속성명="값" 속성명="값">내용</태그명>
+
+			var txt = $("#i1").val();
+			// 내용 바꾸기
+			// $(선택자).text(내용);
+			// $("td").text(txt);
+
+			// $(선택자).html(txt);
+
+			$("td").html(txt);
+		});
+		$("#b2").click(function() {
+			var txt = $("#i1").val();
+
+			// 속성 바꾸기
+			// $(선택자).attr("속성명", "값");
+			$("td").attr("align", txt);
+
+			if ($("table").attr("class") == "a") {
+				$("table").attr("class", "b");
+			} else {
+				$("table").attr("class", "a");
+			}
+		});
+		
+		$("#b3").click(function(){
+			// DOM객체 추가
+			// $("<태그></태그>")
+			var m = $("<marquee></marquee>").text("ㅋㅋㅋㅋ").attr("behavior", "alternate");
+			
+			// $(선택자).append(만든거);
+			// $(선택자).prepend(만든거);
+			$("body").append(m);
+			
+		});
+		$("#b4").click(function(){
+			// DOM 객체 삭제
+			// $("marquee").empty();
+			$("marquee").remove();
+		});
+	});
+</script>
+</head>
+<body>
+	<table class="a">
+		<tr>
+			<td>zz</td>
+		</tr>
+	</table>
+	<hr>
+	<input id="i1">
+	<button id="b1">내용 바꾸기</button>
+	<button id="b2">속성 바꾸기</button>
+	<button id="b3">DOM 객체 추가</button>
+	<button id="b4">DOM 객체 삭제</button>
+</body>
+</html>

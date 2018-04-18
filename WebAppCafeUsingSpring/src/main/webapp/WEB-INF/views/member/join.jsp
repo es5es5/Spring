@@ -39,8 +39,9 @@
 			<tr>
 				<td class="joinTblTd1">주소</td>
 				<td>
-					<input name="im_addr1" maxlength="5" class="joinAddrInput" autocomplete="off" placeholder="우편번호"><span id="addrSearchBtn">우편번호검색</span><br>
-					<input name="im_addr2" maxlength="100" class="joinInput" autocomplete="off" placeholder="주소"><br>
+					<input readonly="readonly" id="a1" name="im_addr1" maxlength="5" class="joinAddrInput" autocomplete="off" placeholder="우편번호">
+					<span id="addrSearchBtn">우편번호검색</span><br>
+					<input readonly="readonly" id="a2" name="im_addr2" maxlength="100" class="joinInput" autocomplete="off" placeholder="주소"><br>
 					<input name="im_addr3" maxlength="100" class="joinInput" autocomplete="off" placeholder="상세주소">
 				</td> 
 			</tr>

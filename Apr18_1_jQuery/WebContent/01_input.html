@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#b1").click(function(){
+		// input의 내용
+		// $(선택자).val()
+		var txt = $("#i1").val();
+		$("body").css("background-color", txt);
+		
+		// input의 내용 넣기
+		// $(선택자).val("내용")
+		$("#i2").val(txt);
+		$("#i1").val("");
+		
+	});
+});
+
+</script>
+</head>
+<body>
+	<input id="i1">
+	<button id="b1">버튼1</button>
+	<input id="i2">
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	.dataTr:hover{
+		background-color: black;
+		color:white;
+	}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var ar2 = [{name:"홍길동", age:10},{name:"김길동", age:20},{name:"최길동", age:30}];		
+		
+		$.each(ar2, function(i, h){
+			var nameTd = $("<td></td>").text(h.name);
+			var ageTd = $("<td></td>").text(h.age);
+			
+			var tr = $("<tr></tr>").attr("class", "dataTr")
+				.append(nameTd, ageTd);
+			
+			$("#t1").prepend(tr);
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<table id="t1"></table>
+	<hr>
+	품명 : <input><br>
+	가격 : <input><br>
+	수량 : <input><br>
+	<button>등록</button>
+	<table id="t2"></table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

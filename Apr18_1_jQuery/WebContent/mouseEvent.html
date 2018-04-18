@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	border : black solid 3px;
+	width: 200px;
+	hight: 200px;
+	
+}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	// 영역 속으로 마우스가 들어가면
+	$("div").mouseenter(function(){
+		$("h1").text("mouseenter");
+	});
+	
+	
+	// 영역 속에 있던 마우스가 나가면
+	$("div").mouseenter(function(){
+		$("h1").text("mouselaeve");
+	});
+	
+	// click, dblclick
+	// 올라가고, 내려가고
+	// 움직임
+	
+});
+</script>
+</head>
+<body>
+<div>zzzz</div>
+<h1>ㅇㅇㅇ</h1>
+</body>
+</html>
