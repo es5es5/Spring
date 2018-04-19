@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	div::-webkit-scrollbar { /* 스크롤바 없앨 수 있다. */ 
+		display:none;
+	}
+	div{
+		width: 300px;
+		height: 300px;
+		overflow: auto; /* 내용물이 더 크면 스크롤 생김 */
+	}
+	table {
+		width: 900px;
+		height: 250px;	
+	}
+	td{
+		font-size: 50pt;
+		font-weight: 900;
+		width: 300px;
+	}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/* $("button").click(function(){
+			// 강제 스크롤
+				// $(선택자).scrollTop(좌표);		
+				// $(선택자).scrollLeft(좌표);
+			
+			// 강제 스크롤(애니메이션)
+				// $(선택자).animate(옵션객체, 시간);
+				// 옵션객체
+				//		{scrollTop:좌표}
+				//		{scrollLeft:좌표}
+			
+			$("div").animate({scrollLeft:300}, 500);
+		}); */
+		
+		$("button").each(function(i, b){
+			$(b).mouseenter(function(){
+				$("div").animate({scrollLeft:i*300}, 500);
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button>ㅋ</button>
+	<button>ㅎ</button>
+	<button>ㅇ</button>
+	<div>
+		<table>
+			<tr>
+				<td align="center" style="background-color:red; color:white;">ㅋㅋㅋ</td>
+				<td align="center" style="background-color:green; color:white;">ㅎㅎㅎ</td>
+				<td align="center" style="background-color:blue; color:white;">ㅇㅇ</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

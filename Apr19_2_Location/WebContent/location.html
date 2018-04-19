@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=81d47202610f64872dd5c247ef6af5e3"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// window : 디자인 관점의 브라우저
+		// navigator : 기능 관점의 브라우저
+		
+		// html5 클라이언트의 현재 위치(GPS, IP주소)
+		navigator.geolocation.getCurrentPosition(function(pos){
+			$("h1").text(pos.coords.latitude); // 위도
+			$("h2").text(pos.coords.longitude); // 경도
+		});
+		
+		//var container = $("#map");
+		var container = document.getElementById('map');
+	
+		var options = { 
+			center: new daum.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+			level: 3
+		};
+
+		var map = new daum.maps.Map(container, options); 
+	});
+</script>
+</head>
+<body>
+	<div id="map" style="width:500px;height:400px;"></div>
+	<h1></h1>
+	<h2></h2>
+</body>
+</html>
+
+
+
+
+
+
+

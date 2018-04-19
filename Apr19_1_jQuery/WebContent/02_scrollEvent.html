@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// 브라우저 화면 사이즈 조절 이벤트
+		$(window).resize(function(){
+			// $(document) // 이 html문서
+			//$(window) // 이 브라우저
+			var dWidth = $(document).width();
+			var dHeight = $(document).height();
+			var wWidth = $(window).width();
+			var wHeight = $(window).height();
+			
+			$("#h1").text(dWidth);
+			$("#h2").text(dHeight);
+			$("#h3").text(wWidth);
+			$("#h4").text(wHeight);	
+		});
+		
+		// 스크롤 이벤트
+		$(window).scroll(function(){
+			var dHeight = $(document).height();
+			var wHeight = $(window).height();
+			var wScrollTop = $(window).scrollTop(); // scrollLeft()
+			var wScrollBottom = wScrollTop + wHeight;
+			if(wScrollBottom == dHeight){ // 스크롤이 바닥에 닿았을 때
+				//alert('바닥');
+				var h1 = $("<h1></h1>").text("ㅇ");
+				$("body").append(h1);
+			}
+		});
+	});
+</script>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+	<h2 id="h1"></h2>
+	<h2 id="h2"></h2>
+	<h2 id="h3"></h2>
+	<h2 id="h4"></h2>
+	ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>
+	ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>
+	ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>ㅋ<br>
+</body>
+</html>

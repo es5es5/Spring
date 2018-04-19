@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 키보드
+		// keydown : 누르기 시작하는 시점(키보드 기능 발현되기 전)
+		// keypress : 키보드 기능이 발현하는 시점
+		// keyup : 키보드에서 손 떼는 시점
+		$("input").keyup(function(e) {
+			// alert(e.keyCode); // 키의 아스키값
+			if (e.keyCode == 13) {
+				alert("엔터 침");
+			}
+		}); 
+
+		$(document).keydown(function(e) {
+
+			if (e.keyCode == 39) {
+				var inputLeft = $("input").css("left"); // "0px"
+
+				inputLeft = inputLeft.replace("px", ""); // "0"
+
+				inputLeft *= 1; // 0
+				inputLeft += 10; // 10
+
+				$("input").css("left", inputLeft + "px");
+			} else if (e.keyCode == 37) {
+				var inputLeft = $("input").css("left"); // "0px"
+
+				inputLeft = inputLeft.replace("px", ""); // "0"
+
+				inputLeft *= 1; // 0
+				inputLeft -= 10; // 10
+
+				$("input").css("left", inputLeft + "px");
+			} else if (e.keyCode == 38) {
+				var inputTop = $("input").css("top"); // "0px"
+
+				inputTop = inputTop.replace("px", ""); // "0"
+
+				inputTop *= 1; // 0
+				inputTop -= 10; // 10
+
+				$("input").css("top", inputTop + "px");
+			} else if (e.keyCode == 40) {
+				var inputTop = $("input").css("top"); // "0px"
+
+				inputTop = inputTop.replace("px", ""); // "0"
+
+				inputTop *= 1; // 0
+				inputTop += 10; // 10
+
+				$("input").css("top", inputTop + "px");
+			}
+		});
+	});
+</script>
+<style type="text/css">
+input {
+	position: fixed;
+}
+</style>
+</head>
+<body>
+	<input>
+</body>
+</html>
+
+
+
+
+
