@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MemberController {
@@ -73,5 +74,10 @@ public class MemberController {
 		}
 		request.setAttribute("contentPage", "home.jsp");
 		return "index";
+	}
+	
+	@RequestMapping(value = "/member.id.check", method = RequestMethod.GET, produces = "application/xml; charset=utf-8")
+	public @ResponseBody Members idCheck(Member m, HttpServletRequest request, HttpServletResponse response) {
+		return mDAO.idCheck(m, request, response);
 	}
 }

@@ -11,6 +11,11 @@
 		resultType="com.lhw.cafe.member.Member">
 		select * from cafe_member where im_id=#{im_id}
 	</select>
+	<select id="getMemberById2"
+		parameterType="com.lhw.cafe.member.Member"
+		resultType="com.lhw.cafe.member.Member">
+		select * from cafe_member where im_id=#{im_id}
+	</select>
 	<update id="update" parameterType="com.lhw.cafe.member.Member">
 		update cafe_member set
 		im_pw=#{im_pw}, im_name=#{im_name}, im_addr3=#{im_addr3},

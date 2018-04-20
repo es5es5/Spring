@@ -142,6 +142,10 @@ public class MemberDAO {
 		}
 	}
 	
+	public Members idCheck(Member m, HttpServletRequest request, HttpServletResponse response) {
+		return new Members(ss.getMapper(MemberMapper.class).getMemberById2(m));
+	}
+	
 	public void update(Member m, HttpServletRequest request, HttpServletResponse response) {
 		try {
 			String path = request.getSession().getServletContext().getRealPath("resources/etc");

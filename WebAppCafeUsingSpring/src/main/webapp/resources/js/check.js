@@ -103,6 +103,30 @@ function updateCheck() {
 	}
 	return true;
 }
+
+function connectIdCheckEvent(){
+	$("#joinID").keyup(function(e) {
+		var i = $("#joinID").val();
+
+		$.ajax({
+			url : "member.id.check",
+			data : {
+				im_id : i
+			},
+			success : function(xml) {
+				var ok = $(xml).find("member").length;
+				if (i == "") {
+					$("#joinIDResult").text("ID 입력");
+				} else if (ok == 1) {
+					$("#joinIDResult").text("ID 중복");
+				} else if (ok == 0) {
+					$("#joinIDResult").text("OK");
+				}
+			}
+		});
+	});
+}
+
 function joinCheck() {
 	var idField = document.joinForm.im_id;
 	var pwField = document.joinForm.im_pw;
@@ -113,7 +137,7 @@ function joinCheck() {
 	var addr3Field = document.joinForm.im_addr3;
 	var imgField = document.joinForm.im_img;
 
-	if (isEmpty(idField) || containsHangul(idField)) {
+	if ($("#joinIDResult").text() == "ID 중복" || isEmpty(idField) || containsHangul(idField)) {
 		alert("id 확인");
 		idField.value = "";
 		idField.focus();

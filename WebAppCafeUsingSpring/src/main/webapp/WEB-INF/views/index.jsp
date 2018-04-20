@@ -15,19 +15,14 @@
 <script type="text/javascript" src="resources/js/validCheck.js"></script>
 <script type="text/javascript" src="resources/js/check.js"></script>
 <script type="text/javascript" src="resources/js/go.js"></script>
+<script type="text/javascript" src="resources/js/address.js"></script>
 <script type="text/javascript" src="resources/js/jquery.js"></script>
 <script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
-$(function(){
-	$("#addrSearchBtn").click(function(){
-	    new daum.Postcode({
-	        oncomplete: function(data) {
-	        	$("#a1").val(data.zonecode);
-	        	$("#a2").val(data.address);
-	        }
-	    }).open();
+	$(function() {
+		connectAddressFindEvent();
+		connectIdCheckEvent();
 	});
-});
 </script>
 </head>
 <body>

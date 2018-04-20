@@ -21,8 +21,8 @@
 		<table id="joinTbl">
 			<tr>
 				<td class="joinTblTd1">id</td>
-				<td><input name="im_id" maxlength="10" autofocus="autofocus" class="joinInputId" autocomplete="off">
-				<span id="joinIDResult">중복ID 없음</span></td>
+				<td><input id="joinID" name="im_id" maxlength="10" autofocus="autofocus" class="joinInputId" autocomplete="off">
+				<span id="joinIDResult"></span></td>
 			</tr>
 			<tr>
 				<td class="joinTblTd1">pw</td>
