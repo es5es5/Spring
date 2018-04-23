@@ -19,6 +19,6 @@
 		order by m_name
 	</select>
 	<select id="getAllStudent" resultType="com.lhw.ja.Student">
-		select * from apr23_student;
+		select * from apr23_student
 	</select>
 </mapper>

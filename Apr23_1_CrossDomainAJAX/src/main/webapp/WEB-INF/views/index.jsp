@@ -71,8 +71,24 @@
 				}
 			});
 		});
-		$("#i2").keyup(function(){
+		$("#i2").keyup(function() {
 			$("#b2").trigger("click");
+		});
+		$("#b3").click(function() {
+			var bTitle = $("#i3").val();
+			bTitle = encodeURIComponent(bTitle);
+			$.ajax({
+				url : "image.get",
+				data : {
+					q : bTitle
+				},
+				success : function(json) {
+					var ar = json.documents;
+					$.each(ar, function(i, b){
+						alert(b.title);
+					});
+				}
+			});
 		});
 	});
 </script>
@@ -89,6 +105,10 @@
 	<input id="i2">
 	<button id="b2">제목 검색</button>
 	<table id="t2"></table>
-
+	<hr>
+	<h3>이미지 검색</h3>
+	<input id="i3">
+	<button id="b3">제목 검색</button>
+	<table id="t3"></table>
 </body>
 </html>

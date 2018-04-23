@@ -24,4 +24,9 @@ public class HomeController {
 		return dao.getNaverMovieData(request, response);
 	}
 	
+	@RequestMapping(value="/image.get", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+	public @ResponseBody String imageGet(HttpServletRequest request, HttpServletResponse response) {
+		return dao.getKakaoImageData(request, response);
+		
+	}
 }
