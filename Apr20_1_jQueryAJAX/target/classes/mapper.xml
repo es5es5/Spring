@@ -18,7 +18,7 @@
 		'%'||#{m_name}||'%'
 		order by m_name
 	</select>
-	<select id="getAllStudent" resultType="com.lhw.ja.Stuent">
+	<select id="getAllStudent" resultType="com.lhw.ja.Student">
 		select * from apr23_student;
 	</select>
 </mapper>

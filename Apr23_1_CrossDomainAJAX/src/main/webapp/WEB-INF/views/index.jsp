@@ -9,7 +9,6 @@
 <script type="text/javascript">
 	$(function() {
 
-		
 		$("#b1").click(function() {
 			var cityName = $("#i1").val();
 
@@ -42,21 +41,38 @@
 				}
 			});
 		});
-		$("#b2").click(function(){
+		$("#b2").click(function() {
 			var movieTitle = $("#i2").val();
 			movieTitle = encodeURIComponent(movieTitle);
 			// 2. JSONP가 되어 있지 않으면
 			// 		JavaScript로는 외부에 접근이 불가능하나
 			//		Java로 접근
 			//		중간 한 단계(proxy)를 거치게
-			
+
 			$.ajax({
 				url : "movie.get",
-				data : {q:"infinitywar"},
-				success : function(xml){
-					alert(xml);
+				data : {
+					q : movieTitle
+				},
+				success : function(xml) {
+					$("#t2").empty();
+					$(xml).find("item").each(function(i, m) {
+						var t = $(m).find("title").text();
+						var i = $(m).find("image").text();
+						var u = $(m).find("userRating").text();
+
+						var img = $("<img>").attr("src", i);
+						var td1 = $("<td></td>").append(img);
+						var td2 = $("<td></td>").html(t);
+						var td3 = $("<td></td>").text(u);
+						var tr = $("<tr></tr>").append(td1, td2, td3);
+						$("#t2").append(tr);
+					});
 				}
 			});
+		});
+		$("#i2").keyup(function(){
+			$("#b2").trigger("click");
 		});
 	});
 </script>
@@ -70,8 +86,9 @@
 	<h3 id="h32"></h3>
 	<hr>
 	<h2>영화 검색</h2>
-	<input id="i2"><button id="b2">제목 검색</button>
+	<input id="i2">
+	<button id="b2">제목 검색</button>
 	<table id="t2"></table>
-	
+
 </body>
 </html>
