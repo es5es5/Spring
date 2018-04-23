@@ -2,10 +2,6 @@ package com.lhw.ja;
 
 import java.math.BigDecimal;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public class Menu {
 	private String m_name;
 	private BigDecimal m_price;
@@ -24,7 +20,6 @@ public class Menu {
 		return m_name;
 	}
 
-	@XmlElement
 	public void setM_name(String m_name) {
 		this.m_name = m_name;
 	}
@@ -33,7 +28,6 @@ public class Menu {
 		return m_price;
 	}
 
-	@XmlElement
 	public void	setM_price(BigDecimal m_price) {
 		this.m_price = m_price;
 	}

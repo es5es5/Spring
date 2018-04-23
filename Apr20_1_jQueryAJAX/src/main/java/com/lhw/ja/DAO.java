@@ -28,7 +28,7 @@ public class DAO {
 	public Menus sMenuByPrice(Menu m, HttpServletRequest request, HttpServletResponse response) {
 		return new Menus(ss.getMapper(Mapper.class).searchMenuByPrice(m));
 	}
-	
+
 	public Menus sMenuByName(Menu m, HttpServletRequest request, HttpServletResponse response) {
 		try {
 			String m_name = m.getM_name();
@@ -40,5 +40,9 @@ public class DAO {
 		}
 		return new Menus(ss.getMapper(Mapper.class).searchMenuByPrice(m));
 	}
-	
+
+	public Students getAllStudent(HttpServletRequest request, HttpServletResponse response) {
+		return new Students(ss.getMapper(Mapper.class).getAllStudent());
+	}
+
 }

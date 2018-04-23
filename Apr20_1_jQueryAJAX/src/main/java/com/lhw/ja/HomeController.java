@@ -15,7 +15,7 @@ public class HomeController {
 	@Autowired
 	private DAO dao;
 
-	@RequestMapping(value = "/menu.get", method = RequestMethod.GET, produces = "application/xml; charset=utf-8")
+	@RequestMapping(value = "/menu.get", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
 	public @ResponseBody Menus menuGet(HttpServletRequest request, HttpServletResponse response) {
 		return dao.getAllMenu(request, response);
 	}
@@ -28,6 +28,11 @@ public class HomeController {
 	@RequestMapping(value = "/menu.search.name", method = RequestMethod.GET, produces = "application/xml; charset=utf-8")
 	public @ResponseBody Menus msn(Menu m, HttpServletRequest request, HttpServletResponse response) {
 		return dao.sMenuByName(m, request, response);
+	}
+	
+	@RequestMapping(value = "/student.getAll", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+	public @ResponseBody Students sGA(HttpServletRequest request, HttpServletResponse response) {
+		return dao.getAllStudent(request, response);
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)

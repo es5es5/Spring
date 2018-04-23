@@ -2,10 +2,6 @@ package com.lhw.ja;
 
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public class Menus {
 	private List<Menu> menu;
 
@@ -22,7 +18,6 @@ public class Menus {
 		return menu;
 	}
 
-	@XmlElement
 	public void setMenu(List<Menu> menu) {
 		this.menu = menu;
 	}
